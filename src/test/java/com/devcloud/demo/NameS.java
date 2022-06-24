@@ -17,7 +17,8 @@ public class VulnTest {
                 sendError(ctx, NOT_FOUND);
                 return;
             }
-
+            
+            if (path == null) return;
             if (isUnpacked) {
                 log.trace("Is unpacked.");
                 private void serveStatic(ChannelHandlerContext ctx, FullHttpRequest request, Sta
