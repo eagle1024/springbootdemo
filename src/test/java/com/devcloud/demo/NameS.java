@@ -36,9 +36,13 @@ public class VulnTest {
                 INSECURE_URI.matcher(uri).matches();
 
     }
+                                         
+    private static final Pattern INSECURE_URI2 = Pattern.compile(".*[<>&\"].*");
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
         if (cause.getMessage() != null && cause.getMessage().contains("unknown_ca")) {
         }
     }
+                                         
+                                         
 }
