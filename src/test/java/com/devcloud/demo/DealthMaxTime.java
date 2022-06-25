@@ -4,6 +4,7 @@ public class DealthMaxTime {
     class Pair {
         int i;
         int j;
+        int k;
     }
 
     public int dealthMaxTime(List<Pair> list) {
