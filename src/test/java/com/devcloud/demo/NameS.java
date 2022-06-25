@@ -26,6 +26,18 @@ public class VulnTest {
     }
     private static final Pattern INSECURE_URI = Pattern.compile(".*[<>&\"].*");
 
+    private static boolean isNotSecure1(String uri) {
+        if (uri.isEmpty() || uri.charAt(0) != '/') {
+            return true;
+        }
+
+        return uri.contains(File.separator + '.') ||
+                uri.contains('.' + File.separator) ||
+                uri.charAt(0) == '.' || uri.charAt(uri.length() - 1) == '.' ||
+                INSECURE_URI.matcher(uri).matches();
+
+    }
+                                         
     private static boolean isNotSecure(String uri) {
         if (uri.isEmpty() || uri.charAt(0) != '/') {
             return true;
