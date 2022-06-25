@@ -11,6 +11,7 @@ public class DealthMaxTime {
         int[] count = new int[101];
         int max = 0;
         int min = 0;
+        int len = 0;
         for (int i = 0; i < count.length; i++) {
             int iSum = 0;
             for (Pair pair : list) {
